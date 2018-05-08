@@ -1,4 +1,3 @@
-
 import {Component, NgModule, VERSION} from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
