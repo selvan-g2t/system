@@ -17,7 +17,6 @@ export class TestingComponents{
     this.name = `Angular! v${VERSION.full}`
   }
 }
-
 const routes: Routes = [
     { path: '', redirectTo: 'one', pathMatch: 'full' },
     {
@@ -25,8 +24,6 @@ const routes: Routes = [
       component: TestingComponents
     }
   ];
-  
-
 @NgModule({
   imports: [ CommonModule,RouterModule.forChild(routes) ],
   declarations: [ TestingComponents ],
