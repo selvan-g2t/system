@@ -1,9 +1,7 @@
-//our root app component
 import {Component, NgModule, VERSION} from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-
 @Component({
   selector: 'testing',
   template: `
@@ -18,7 +16,6 @@ export class TestingComponents{
     this.name = `Angular! v${VERSION.full}`
   }
 }
-
 const routes: Routes = [
     { path: '', redirectTo: 'one', pathMatch: 'full' },
     {
@@ -26,8 +23,6 @@ const routes: Routes = [
       component: TestingComponents
     }
   ];
-  
-
 @NgModule({
   imports: [ CommonModule,RouterModule.forChild(routes) ],
   declarations: [ TestingComponents ],
