@@ -6,9 +6,9 @@ const routes: Routes = [
     path: 'some-module',
     /* loadChildren: 'app/some-module/some-module.module#SomeModuleModule' */
     loadChildren: () => {
-      return import('./some-module/some-module.module').then((comp: any) => {
+      return import('./some-module/test').then((comp: any) => {
         console.log(comp)
-        return comp.SomeModuleModule;
+        return comp.TestingModule;
       });
     }
   },
