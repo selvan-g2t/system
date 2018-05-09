@@ -1,6 +1,5 @@
 //our root app component
 import {Component, NgModule, VERSION} from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
@@ -19,17 +18,8 @@ export class TestingComponents{
   }
 }
 
-const routes: Routes = [
-    { path: '', redirectTo: 'one', pathMatch: 'full' },
-    {
-      path: 'one',
-      component: TestingComponents
-    }
-  ];
-  
-
 @NgModule({
-  imports: [ CommonModule,RouterModule.forChild(routes) ],
+  imports: [ CommonModule ],
   declarations: [ TestingComponents ],
   bootstrap: [ TestingComponents ],
     entryComponents: [TestingComponents]
