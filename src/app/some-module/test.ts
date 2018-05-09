@@ -31,6 +31,7 @@ const routes: Routes = [
 @NgModule({
   imports: [ CommonModule,RouterModule.forChild(routes) ],
   declarations: [ TestingComponents ],
-  bootstrap: [ TestingComponents ]
+  bootstrap: [ TestingComponents ],
+    entryComponents: [TestingComponents]
 })
 export class TestingModule {}
