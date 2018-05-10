@@ -6,11 +6,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
+//our root app component
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var patternfly_ng_1 = require("patternfly-ng");
-var TestingComponents = /** @class */ (function () {
-    function TestingComponents() {
+var ChartsComponents = /** @class */ (function () {
+    function ChartsComponents() {
+        this.chartData = [];
         this.chartData = [
             ['Cats', 2],
             ['Hamsters', 1],
@@ -38,27 +40,26 @@ var TestingComponents = /** @class */ (function () {
             }
         };
     }
-    TestingComponents = __decorate([
+    ChartsComponents = __decorate([
         core_1.Component({
-            encapsulation: core_1.ViewEncapsulation.None,
-            selector: 'testing',
-            template: "\n    <pfng-chart-donut [chartData]=\"chartData\" [config]=\"largeConfig\"></pfng-chart-donut>\n    "
+            selector: 'chart',
+            template: "\n    <div>\n    <pfng-chart-donut [chartData]=\"chartData\" [config]=\"largeConfig\"></pfng-chart-donut>\n    </div>\n  "
         })
-    ], TestingComponents);
-    return TestingComponents;
+    ], ChartsComponents);
+    return ChartsComponents;
 }());
-exports.TestingComponents = TestingComponents;
-var TestingModule = /** @class */ (function () {
-    function TestingModule() {
+exports.ChartsComponents = ChartsComponents;
+var ChartsModule = /** @class */ (function () {
+    function ChartsModule() {
     }
-    TestingModule = __decorate([
+    ChartsModule = __decorate([
         core_1.NgModule({
             imports: [common_1.CommonModule, patternfly_ng_1.ChartModule],
-            declarations: [TestingComponents],
-            bootstrap: [TestingComponents],
-            entryComponents: [TestingComponents]
+            declarations: [ChartsComponents],
+            bootstrap: [ChartsComponents],
+            entryComponents: [ChartsComponents]
         })
-    ], TestingModule);
-    return TestingModule;
+    ], ChartsModule);
+    return ChartsModule;
 }());
-exports.TestingModule = TestingModule;
+exports.ChartsModule = ChartsModule;
