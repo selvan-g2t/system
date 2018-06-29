@@ -1,4 +1,4 @@
- "use strict";
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -12,8 +12,7 @@ var http_1 = require("@angular/common/http");
 var common_1 = require("@angular/common");
 var patternfly_ng_1 = require("patternfly-ng");
 var ChartsComponents = /** @class */ (function () {
-    function ChartsComponents(httpClient) {
-        this.httpClient = httpClient;
+    function ChartsComponents() {
         this.chartData = [];
         this.chartData = [
             ['Cats', 2],
@@ -43,9 +42,9 @@ var ChartsComponents = /** @class */ (function () {
         };
     }
     ChartsComponents.prototype.ngOnInit = function () {
-        this.httpClient.get("https://jsonplaceholder.typicode.com/posts/1").subscribe(function (res) {
-            console.log(res);
-        });
+        //  this.httpClient.get("https://jsonplaceholder.typicode.com/posts/1").subscribe((res)=>{
+        console.log("test");
+        // });
     };
     ChartsComponents = __decorate([
         core_1.Component({
