@@ -8,10 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 //our root app component
 var core_1 = require("@angular/core");
+var http_1 = require("@angular/common/http");
 var common_1 = require("@angular/common");
 var patternfly_ng_1 = require("patternfly-ng");
 var ChartsComponents = /** @class */ (function () {
-    function ChartsComponents() {
+    function ChartsComponents(httpClient) {
+        this.httpClient = httpClient;
         this.chartData = [];
         this.chartData = [
             ['Cats', 2],
@@ -40,6 +42,11 @@ var ChartsComponents = /** @class */ (function () {
             }
         };
     }
+    ChartsComponents.prototype.ngOnInit = function () {
+        this.httpClient.get("https://jsonplaceholder.typicode.com/posts/1").subscribe(function (res) {
+            console.log(res);
+        });
+    };
     ChartsComponents = __decorate([
         core_1.Component({
             selector: 'chart',
@@ -54,7 +61,7 @@ var ChartsModule = /** @class */ (function () {
     }
     ChartsModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule, patternfly_ng_1.ChartModule],
+            imports: [common_1.CommonModule, patternfly_ng_1.ChartModule, http_1.HttpClientModule],
             declarations: [ChartsComponents],
             bootstrap: [ChartsComponents],
             entryComponents: [ChartsComponents]
